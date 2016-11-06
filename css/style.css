@@ -3,7 +3,6 @@ html{
   font-family: Arial Black;
   color: #1e785c;
   text-align: center;
-  cursor: url(mouse.cur);
 }
 
 p{
@@ -14,7 +13,6 @@ p{
 }
 
 body{
-
   margin-left: auto;
   margin-right: auto;
   margin-top: 0px;
@@ -36,7 +34,7 @@ body > div{
   background-color: #c8f6ed;
 }
 
-@media screen and (max-width: 1280px){   /*去掉padding*/
+@media screen and (max-width: 1280px){   /* M */
   body >div{
     width:100%;
     padding :0px;
@@ -48,7 +46,7 @@ span{  /*hambuger*/
   display: none;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px){   /*S hamber*/
   .habrgr{
     position: fixed;
     display: block;
@@ -77,15 +75,10 @@ span{  /*hambuger*/
     cursor: pointer;
   }
 
-  /*.click>span,
-  span:hover{
-    background-color: rgba(200, 246, 237, 0.8);*/
-  }
 }
 
 content {
   margin-top: 125px;
-  padding-bottom: 80px;
 }
 
 content img{
@@ -105,14 +98,53 @@ content > div{
   padding-bottom: 40px;
 }
 
+.show{
+  position: relative;
+  padding: 0px;
+}
+.show_box{
+  padding:0px;
+  margin:auto;
+}
+
+.show_img{
+  padding-top:5px;
+}
+.show_img img:hover{
+  opacity: 0.5;
+}
+.show_buttom{
+  padding: 0px;
+  display:none;
+}
 .mask{
-  background-color: rgba(200,200,200,0.25);
+  background-color: rgba(200,200,200,0.4);
   position: absolute;
   bottom:5px;
   left:0px;
   width:100%;
-  height:350px;   /* 無法用比例設定 */
   z-index: 5555;
+}
+
+
+@media screen and (max-width:768px){  /* S */
+
+  .show_img img{
+    display:none;
+  }
+
+  .show_buttom{
+    position: absolute;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    top:42%;
+    z-index: 5555;
+  }
+  .show_buttom:hover{
+    background-color: rgba(230,230,230,0.95);
+  }
+
 }
 
 .logo{
@@ -123,12 +155,20 @@ content > div{
 }
 
 .index_banner{
-  margin-top: 163px;
+  margin-top: 168px;
   width: 100%;
   height: 570px;
   background-color: #2eb89c;
   position: absolute;
   z-index: -1;
+}
+
+.mainbanner{
+  margin-left: -50px;
+}
+
+banner{
+  padding:0px;
 }
 
 @media screen and (max-width:1280px){   /*M bannerd*/
@@ -141,21 +181,27 @@ content > div{
     z-index: -1;
   }
 
-  banner {
-    margin-left: 0px;
-  }
-
-  banner img{
+  .mainbanner img{
       width:100%;
-      height:100%
+
       margin-left: auto;
       margin-right: auto;
     }
+  .mainbanner{
+    margin:0px;
+  }
 }
 
+@media screen and (max-width:768px){  /* S */
+  .index_about{
+    width:90%;
+  }
 
-banner {
-  margin-left: -50px;
+  .content_other{
+    width:34%;
+  }
+
+
 }
 
 nav{
@@ -164,10 +210,8 @@ nav{
 
 nav ul{
   margin: 0px;
-  padding-top: 40px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 0px;
+  padding: 40px 50px 0px 50px;
+  z-index: 9999;
 }
 
 nav > ul > li{
@@ -203,7 +247,7 @@ li li{
   float: none;
 }
 
-@media screen and (min-width:768px){
+@media screen and (min-width:768px){   /* M */
   nav li li:hover{
     text-align: center;
     background-color: #3ec8ac;
@@ -218,7 +262,7 @@ li li{
 
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:768px){   /*S habrgr*/
   nav > ul{
     display: none;
     position: fixed;
@@ -259,6 +303,7 @@ footer{
     width: auto;
     padding-left: 200px;
     padding-right: 200px;
+    box-sizing: border-box;
 }
 
 footer ul{
@@ -276,12 +321,15 @@ footer p{
   padding-bottom: 20px;
 }
 
-@media screen and (max-width:768px){
+footer a:hover{
+  color: #c8f6ed;
+}
+
+@media screen and (max-width:768px){  /* S */
   footer{
       font-size: 12px;
       padding-top: 5px;
-      background-color: #3ec8ac;
-      height:20px;
+      background-color:#3ec8ac;
       width: 100%;
       padding-left: 0px;
       padding-right: 0px;
@@ -293,11 +341,12 @@ footer p{
     margin-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 5px;
+    box-sizing: border-box;
   }
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {  /* l M */
   .row {
     margin-right: -40px;
   }
@@ -312,10 +361,24 @@ footer p{
 	.col-lg-7 {width: 58.331%}
 	.col-lg-6 {width: 50%;}
 	.col-lg-5 {width: 41.662%}
+  .col-lg-4-2{width: 37%;}
 	.col-lg-4 {width: 33.332%;}
 	.col-lg-3 {width: 25%;}
 	.col-lg-2 {width: 16.662%;}
 	.col-lg-1 {width: 8.332%;}
+}
+
+@media screen and (max-width: 768px) {  /* l M */
+
+	.col-sm-3 {width: 25%;}
+	.col-sm-2 {width: 95%;}
+	.col-sm-1 {width: 70%;}
+
+  .btm-L-1{ left:15%;}
+  .btm-L-2{ left:2.5%;}
+
+  .btm-R-1{ right: 15%;}
+  .btm-R-2{ right: 2.5%;}
 }
 
 
