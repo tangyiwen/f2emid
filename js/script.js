@@ -22,13 +22,13 @@ $(document).ready(function(){
       return false;
     }
   });
-  $("nav").mouseleave(function(){
-    if( $(this).hasClass("click") ){
-      $("nav ul").slideUp();
-      $(this).removeClass("click");
+  $("body").click(function(){              /*1107修改mouseleave*/
+    if( $("nav").hasClass("click") ){
+      $("nav ul").slideUp(700);
+      $("nav").removeClass("click");
     }
-
   });
+
 
   $("content a").hover(function(){        /*透明片*/
     $(this).append("<div></div>");
