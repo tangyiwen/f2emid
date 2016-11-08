@@ -224,6 +224,12 @@ banner{
   .mainbanner{
     margin:0px;
   }
+
+  .content_other{
+    width:20%;
+  }
+
+
 }
 
 @media screen and (max-width:768px){  /* S */
